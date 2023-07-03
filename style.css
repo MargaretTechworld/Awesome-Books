@@ -1,0 +1,29 @@
+.page-title{
+  font-size: 2rem;
+}
+
+p{
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 30px;
+}
+button{
+  margin-top: 2%;
+  font-size: 1.2rem;
+  padding: 1.2%;
+}
+input{
+  display: block;
+  padding: 2%;
+  margin-bottom: 4%;
+}
+@media screen and (width >= 768px) {
+  button{
+    padding: 0.5%;
+ 
+  }
+  input{
+    padding: 0.5%;
+    margin-bottom: 1%;
+  } 
+}
