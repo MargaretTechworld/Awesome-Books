@@ -15,7 +15,7 @@ function clearInput(){
   bookAuthor.value="";
 }
 function savedBooks(){
-  window.localStorage.setItem("books",JSON.stringify(awesomeBooks));
+  window.localStorage.setItem("books" , JSON.stringify(awesomeBooks));
 }
 
 
@@ -25,16 +25,17 @@ buttonAdd.addEventListener("click", (e) => {
   e.preventDefault();
   addAwesomeBooks();
   savedBooks();
+  showBooks();
   clearInput();
   console.log(awesomeBooks)
 });
 
 function showBooks(){
-  const bookStored = JSON.parse(window.localStorage.getItem(awesomeBooks));
+  const bookStored = JSON.parse(window.localStorage.getItem("books"));
   let displayBooks = bookStored.map(
     (book) => `
-  <p class="book-title">${addAwesomeBooks.title}</p>
-  <p class="book-author">${addAwesomeBooks.author}</p>
+  <p class="book-title">${book.title}</p>
+  <p class="book-author">${book.author}</p>
   <button class="remove-button">Remove</button>
   <hr />
   `, );
