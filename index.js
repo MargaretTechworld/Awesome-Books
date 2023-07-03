@@ -3,7 +3,7 @@ const bookTitle = document.querySelector('.input-field1');
 const bookAuthor = document.querySelector('.input-field2');
 const bookShelf = document.querySelector('.books-section');
 
-let awesomeBooks = JSON.parse(localStorage.getItem('books')) || [];
+const awesomeBooks = JSON.parse(localStorage.getItem('books')) || [];
 
 function addAwesomeBooks() {
   awesomeBooks.push({ title: bookTitle.value, author: bookAuthor.value });
@@ -18,12 +18,6 @@ function savedBooks() {
   localStorage.setItem('books', JSON.stringify(awesomeBooks));
 }
 
-function removeBook(index) {
-  awesomeBooks.splice(index, 1);
-  savedBooks();
-  showBooks();
-}
-
 function showBooks() {
   const displayBooks = awesomeBooks.map((book, index) => `
     <div>
@@ -34,6 +28,12 @@ function showBooks() {
     </div>
   `);
   bookShelf.innerHTML = displayBooks.join('');
+}
+
+function removeBook(index) {
+  awesomeBooks.splice(index, 1);
+  savedBooks();
+  showBooks();
 }
 
 buttonAdd.addEventListener('click', (e) => {
