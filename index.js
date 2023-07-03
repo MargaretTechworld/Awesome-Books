@@ -1,46 +1,49 @@
+const buttonAdd = document.querySelector('.add-button');
+const bookTitle = document.querySelector('.input-field1');
+const bookAuthor = document.querySelector('.input-field2');
+const bookShelf = document.querySelector('.books-section');
 
-let buttonAdd = document.querySelector(".add-button");
-let bookTitle = document.querySelector(".input-field1");
-let bookAuthor = document.querySelector(".input-field2");
-let bookShelf = document.querySelector(".books-section");
+let awesomeBooks = JSON.parse(localStorage.getItem('books')) || [];
 
-let awesomeBooks = [];
-
-function addAwesomeBooks(){
-  awesomeBooks.push({title: bookTitle.value, author: bookAuthor.value});
+function addAwesomeBooks() {
+  awesomeBooks.push({ title: bookTitle.value, author: bookAuthor.value });
 }
 
-function clearInput(){
-  bookTitle.value="";
-  bookAuthor.value="";
-}
-function savedBooks(){
-  window.localStorage.setItem("books" , JSON.stringify(awesomeBooks));
+function clearInput() {
+  bookTitle.value = '';
+  bookAuthor.value = '';
 }
 
+function savedBooks() {
+  localStorage.setItem('books', JSON.stringify(awesomeBooks));
+}
 
+function removeBook(index) {
+  awesomeBooks.splice(index, 1);
+  savedBooks();
+  showBooks();
+}
 
+function showBooks() {
+  const displayBooks = awesomeBooks.map((book, index) => `
+    <div>
+      <p class="book-title">${book.title}</p>
+      <p class="book-author">${book.author}</p>
+      <button class="remove-button" onclick="removeBook(${index})">Remove</button>
+      <hr />
+    </div>
+  `);
+  bookShelf.innerHTML = displayBooks.join('');
+}
 
-buttonAdd.addEventListener("click", (e) => {
+buttonAdd.addEventListener('click', (e) => {
   e.preventDefault();
   addAwesomeBooks();
   savedBooks();
   showBooks();
   clearInput();
-  console.log(awesomeBooks)
 });
 
-function showBooks(){
-  const bookStored = JSON.parse(window.localStorage.getItem("books"));
-  let displayBooks = bookStored.map(
-    (book) => `
-  <p class="book-title">${book.title}</p>
-  <p class="book-author">${book.author}</p>
-  <button class="remove-button">Remove</button>
-  <hr />
-  `, );
-  bookShelf.innerHTML= displayBooks.join("");
-  }
-  window.addEventListener("DOMContentLoaded", () => {
-    showBooks();
-  });
+window.addEventListener('DOMContentLoaded', () => {
+  showBooks();
+});
