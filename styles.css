@@ -6,6 +6,7 @@
   padding: 0;
 }
 
-.book-author, .book-title {
-    margin: 0;
+.book-author,
+.book-title {
+  margin: 0;
 }
