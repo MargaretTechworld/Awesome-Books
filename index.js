@@ -6,7 +6,9 @@ const bookShelf = document.querySelector('.books-section');
 const awesomeBooks = JSON.parse(localStorage.getItem('books')) || [];
 
 function addAwesomeBooks() {
-  awesomeBooks.push({ title: bookTitle.value, author: bookAuthor.value });
+  if (bookTitle.value !== '' && bookAuthor.value !== '') {
+    awesomeBooks.push({ title: bookTitle.value, author: bookAuthor.value });
+  }
 }
 
 function clearInput() {
