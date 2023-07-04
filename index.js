@@ -30,7 +30,7 @@ function showBooks() {
   bookShelf.innerHTML = displayBooks.join('');
 }
 
-function removeBook(index) {
+function removeBook(index) { // eslint-disable-line no-unused-vars
   awesomeBooks.splice(index, 1);
   savedBooks();
   showBooks();
