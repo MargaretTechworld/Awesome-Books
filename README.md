@@ -80,7 +80,7 @@ Open the index.html file on the browser or use a VS code extension server to sta
 
 - GitHub: [MargaretTechworld](https://github.com/MargaretTechworld)
 - Twitter: [KojoMargaret](https://twitter.com/KojoMargaret)
-- LinkedIn: [MargaretTechworld](https://www.linkedin.com/in/margaret-kojo-musa-759b8026a/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
