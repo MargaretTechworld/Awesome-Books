@@ -10,6 +10,44 @@ body {
   margin: 0 auto;
   min-width: 375px;
 
+.header{
+  padding: 1%;
+  .nav-bar{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #000000;
+    font-size: 20px;
+    font-weight: 600;
+    align-items: baseline;
+    width: 100%;
+    padding: 0.4%;
+    
+    .logo{
+    text-decoration: none;
+    margin-left: 30px;
+    color: black;
+    }
+    
+    .nav-link-div{
+      display: flex;
+      justify-content: space-between;
+      flex-basis: 20%;
+      
+    .nav-links{
+      text-decoration: none;
+      border: none;
+      background: none;
+      font-size: 18px;
+      border-right: 1px solid black;
+      color: black;
+      padding-right: 8%;
+    }
+    }
+    
+    }
+}
+
+
   .page-title {
     margin: 0 auto;
     text-align: center;
@@ -135,6 +173,22 @@ body {
 
       &:active {
         background-color: rgb(151, 151, 235);
+      }
+    }
+  }
+
+
+  .footer{
+    padding: 1%;
+    .ft-nav-bar{
+    border: 2px solid #000000;
+    font-size: 20px;
+    width: 100%;
+    padding: 0.4%;
+      .ft-nav-links{
+        text-decoration: none;
+        color: black;
+        margin-left: 30px;
       }
     }
   }
