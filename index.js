@@ -1,51 +1,64 @@
-const buttonAdd = document.querySelector('.add-button');
-const bookTitle = document.querySelector('.input-field1');
-const bookAuthor = document.querySelector('.input-field2');
-const bookShelf = document.querySelector('.books-section');
-
-const awesomeBooks = JSON.parse(localStorage.getItem('books')) || [];
-
-function addAwesomeBooks() {
-  if (bookTitle.value !== '' && bookAuthor.value !== '') {
-    awesomeBooks.push({ title: bookTitle.value, author: bookAuthor.value });
+/* eslint-disable no-use-before-define */
+/* eslint-disable max-classes-per-file */
+  class Book {
+    constructor(title, author) {
+      this.title = title;
+      this.author = author;
+    } 
   }
-}
-
-function clearInput() {
-  bookTitle.value = '';
-  bookAuthor.value = '';
-}
-
-function savedBooks() {
-  localStorage.setItem('books', JSON.stringify(awesomeBooks));
-}
-
-function showBooks() {
-  const displayBooks = awesomeBooks.map((book, index) => `
-    <div>
-      <p class="book-title">${book.title}</p>
-      <p class="book-author">${book.author}</p>
-      <button class="remove-button" onclick="removeBook(${index})">Remove</button>
-      <hr />
-    </div>
-  `);
-  bookShelf.innerHTML = displayBooks.join('');
-}
-
-function removeBook(index) { // eslint-disable-line no-unused-vars
-  awesomeBooks.splice(index, 1);
-  savedBooks();
-  showBooks();
-}
-
-buttonAdd.addEventListener('click', (e) => {
-  e.preventDefault();
-  addAwesomeBooks();
-  savedBooks();
-  showBooks();
-  clearInput();
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  showBooks();
-});
+  
+  class BookStore {
+    constructor() {
+      this.library = JSON.parse(localStorage.getItem('library')) || [];
+    }
+    
+    addBook(title, author) {
+      const book = new Book(title, author);
+      this.library.push(book);
+      localStorage.setItem('library', JSON.stringify(this.library));
+    }
+    
+    removeBook(index) {
+      this.library.splice(index, 1);
+      localStorage.setItem('library', JSON.stringify(this.library));
+      this.showBook();
+    }
+    showBook() {
+      const container = document.querySelector('.books-section');
+      this.library.forEach((book, index) => {
+        const bookShelf = document.createElement('div');
+        bookShelf.classList.add('book-shelf');
+        bookShelf.innerHTML =` 
+        <p class="book-title">${book.title}</p>
+        <p class="book-author">${book.author}</p>
+        <button class="remove-button" onclick="removeBook(${index})">Remove</button>
+        <hr />`
+        container.appendChild('bookShelf');
+        
+      })
+        const removeButton = document.querySelectorAll('.remove-button');
+        
+        removeButton.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const { index } = e.target.dataset;
+            this.removeBook(index);
+          });
+      })
+    }
+  }
+  
+  const bookStore = new BookStore();
+  
+  
+  function add() {
+    let titleInput = document.querySelector('.input-field1').value;
+    let authorInput = document.querySelector('.input-field2').value;
+    if (titleInput !== '' && authorInput !== '') {
+      bookStore.addBook(titleInput, authorInput);
+    } 
+    
+    titleInput = '';
+    authorInput = '';
+  };
+  
+  bookStore.showBook();
