@@ -177,7 +177,36 @@ body {
     }
   }
 
+.section-3 {
+    margin: 60px auto;
+    .contact-container {
+      width: min(630px, 94%);
+      margin: 0 auto;
+      position: relative;
+      .contact-header, .contact-text, .contact-list {
+        font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+      }
+      .contact-header {
+        font-size: 42px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .contact-text {
+        font-size: 2em;
+        color: #2b2b2b;
+        margin-bottom: 30px;
+      }
+      .contact-list {
+        font-size: 1.4em;
+        text-align: start;
+        color: #323232;
+        padding-left: 7%;
+      }
+    }
+  }
 
+  
   .footer{
     padding: 1%;
     .ft-nav-bar{
