@@ -47,11 +47,13 @@ class BookCollection {
 
   showBooks() {
     const displayBooks = this.collection.map((book, index) => `
-      <div>
-        <p class="book-title">${book.title}</p>
-        <p class="book-author">${book.author}</p>
-        <button class="remove-button" onclick="bookCollection.removeBook(${index})">Remove</button>
-        <hr />
+      <div class="book-store">
+        <div class="store-text">
+          <p class="book-title">"${book.title}"</p>
+          <p class="by-text">by</p>
+          <p class="book-author">${book.author}</p>
+        </div>
+        <button class="remove-button" onclick="bookCollection.removeBook(${index})">Remove</button> 
       </div>
     `);
     this.bookShelf.innerHTML = displayBooks.join('');
