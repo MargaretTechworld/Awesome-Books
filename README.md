@@ -80,9 +80,8 @@ Open the index.html file on the browser or use a VS code extension server to sta
 
 - GitHub: [MargaretTechworld](https://github.com/MargaretTechworld)
 - Twitter: [KojoMargaret](https://twitter.com/KojoMargaret)
-- LinkedIn: [MargaretTechworld](https://www.linkedin.com/in/margaret-kojo-musa)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</
 
 ## 🔭 Future Features <a name="future-features"></a>
 
