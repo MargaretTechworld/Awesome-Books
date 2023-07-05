@@ -1,51 +1,61 @@
-const buttonAdd = document.querySelector('.add-button');
-const bookTitle = document.querySelector('.input-field1');
-const bookAuthor = document.querySelector('.input-field2');
-const bookShelf = document.querySelector('.books-section');
-
-const awesomeBooks = JSON.parse(localStorage.getItem('books')) || [];
-
-function addAwesomeBooks() {
-  if (bookTitle.value !== '' && bookAuthor.value !== '') {
-    awesomeBooks.push({ title: bookTitle.value, author: bookAuthor.value });
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
 }
 
-function clearInput() {
-  bookTitle.value = '';
-  bookAuthor.value = '';
+class BookCollection {
+  constructor() {
+    this.collection = JSON.parse(localStorage.getItem('books')) || [];
+    this.buttonAdd = document.querySelector('.add-button');
+    this.bookTitle = document.querySelector('.input-field1');
+    this.bookAuthor = document.querySelector('.input-field2');
+    this.bookShelf = document.querySelector('.books-section');
+
+    this.showBooks();
+    this.buttonAdd.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.addBook();
+      this.saveBooks();
+      this.showBooks();
+      this.clearInput();
+    });
+  }
+
+  addBook() {
+    if (this.bookTitle.value !== '' && this.bookAuthor.value !== '') {
+      const book = new Book(this.bookTitle.value, this.bookAuthor.value);
+      this.collection.push(book);
+    }
+  }
+
+  removeBook(index) {
+    this.collection.splice(index, 1);
+    this.saveBooks();
+    this.showBooks();
+  }
+
+  saveBooks() {
+    localStorage.setItem('books', JSON.stringify(this.collection));
+  }
+
+  clearInput() {
+    this.bookTitle.value = '';
+    this.bookAuthor.value = '';
+  }
+
+  showBooks() {
+    const displayBooks = this.collection.map((book, index) => `
+      <div>
+        <p class="book-title">${book.title}</p>
+        <p class="book-author">${book.author}</p>
+        <button class="remove-button" onclick="bookCollection.removeBook(${index})">Remove</button>
+        <hr />
+      </div>
+    `);
+    this.bookShelf.innerHTML = displayBooks.join('');
+  }
 }
 
-function savedBooks() {
-  localStorage.setItem('books', JSON.stringify(awesomeBooks));
-}
-
-function showBooks() {
-  const displayBooks = awesomeBooks.map((book, index) => `
-    <div>
-      <p class="book-title">${book.title}</p>
-      <p class="book-author">${book.author}</p>
-      <button class="remove-button" onclick="removeBook(${index})">Remove</button>
-      <hr />
-    </div>
-  `);
-  bookShelf.innerHTML = displayBooks.join('');
-}
-
-function removeBook(index) { // eslint-disable-line no-unused-vars
-  awesomeBooks.splice(index, 1);
-  savedBooks();
-  showBooks();
-}
-
-buttonAdd.addEventListener('click', (e) => {
-  e.preventDefault();
-  addAwesomeBooks();
-  savedBooks();
-  showBooks();
-  clearInput();
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  showBooks();
-});
+const bookCollection = new BookCollection();
