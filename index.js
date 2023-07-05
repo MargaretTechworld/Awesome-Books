@@ -1,3 +1,7 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable max-classes-per-file */
+/* eslint-disable-line no-unused-vars */
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -61,3 +65,4 @@ class BookCollection {
 }
 
 const bookCollection = new BookCollection();
+bookCollection.addBook();

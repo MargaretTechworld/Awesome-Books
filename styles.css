@@ -6,9 +6,10 @@
   padding: 0;
 }
 
- body {
+body {
   margin: 0 auto;
   min-width: 375px;
+
   .page-title {
     margin: 0 auto;
     text-align: center;
@@ -21,12 +22,14 @@
     border: 3px solid rgba(0, 0, 0, 0.9);
     padding: 2px;
     margin: 0 auto;
+
     .book-store {
       position: relative;
       height: 40px;
       display: flex;
       flex-direction: row;
       align-items: center;
+
       &:nth-of-type(odd) {
         background-color: #c4c4c4;
       }
@@ -36,17 +39,22 @@
         align-items: center;
         justify-self: flex-start;
         padding: 1%;
-        .book-title, .book-author {
+
+        .book-title,
+        .book-author {
           font-size: 1.4em;
           font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
           font-weight: 700;
         }
+
         .book-title {
           margin-right: 10px;
         }
+
         .book-author {
           margin-left: 10px;
         }
+
         .by-text {
           font-family: Arial, Helvetica, sans-serif;
           font-weight: 500;
@@ -64,9 +72,11 @@
         font-size: 1.2em;
         font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
         font-weight: 700;
+
         &:hover {
           background-color: red;
         }
+
         &:active {
           background-color: rgb(242, 163, 163);
         }
@@ -79,7 +89,6 @@
     height: 2px;
     background-color: #000;
     margin: 0 auto;
-
   }
 
   .form {
@@ -92,12 +101,13 @@
     font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
 
     .form-title {
-      font-size:38px;
+      font-size: 38px;
       font-weight: 500;
     }
 
-    .input-field1, .input-field2 {
-      width : min(340px, 92%);
+    .input-field1,
+    .input-field2 {
+      width: min(340px, 92%);
       height: 32px;
       margin: 0 auto;
       color: #000;
@@ -118,12 +128,14 @@
       position: absolute;
       right: 10%;
       bottom: 0%;
+
       &:hover {
         background-color: aqua;
       }
+
       &:active {
         background-color: rgb(151, 151, 235);
       }
     }
   }
- }
+}
