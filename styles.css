@@ -14,7 +14,7 @@ body {
     background-color: #fff;
     padding-top: 30px;
     padding-bottom: 10px;
-    margin:0 auto;
+    margin: 0 auto;
     position: fixed;
     width: 100%;
     z-index: 3;
@@ -65,10 +65,12 @@ body {
         }
       }
     }
+
     .date-container {
       position: relative;
       margin: 10px auto 20px auto;
       width: min(630px, 94%);
+
       .date-info {
         position: absolute;
         color: #535252;
@@ -89,51 +91,51 @@ body {
         font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
         font-size: 48px;
       }
-      
+
       .books-section {
         width: min(520px, 94%);
         border: 3px solid rgba(0, 0, 0, 0.9);
         padding: 2px;
         margin: 0 auto;
-        
+
         .book-store {
           position: relative;
           height: 40px;
           display: flex;
           flex-direction: row;
           align-items: center;
-          
+
           &:nth-of-type(odd) {
             background-color: #c4c4c4;
           }
-          
+
           .store-text {
             display: flex;
             align-items: center;
             justify-self: flex-start;
             padding: 1%;
-            
+
             .book-title,
             .book-author {
               font-size: 1.4em;
               font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
               font-weight: 700;
             }
-            
+
             .book-title {
               margin-right: 10px;
             }
-            
+
             .book-author {
               margin-left: 10px;
             }
-            
+
             .by-text {
               font-family: Arial, Helvetica, sans-serif;
               font-weight: 500;
             }
           }
-          
+
           .remove-button {
             position: absolute;
             right: 2%;
@@ -145,18 +147,18 @@ body {
             font-size: 1.2em;
             font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
             font-weight: 700;
-            
+
             &:hover {
               background-color: red;
             }
-            
+
             &:active {
               background-color: rgb(242, 163, 163);
             }
           }
         }
       }
-      
+
       .seperator {
         width: 200px;
         height: 2px;
@@ -166,7 +168,6 @@ body {
     }
 
     .section-2 {
-
       .form {
         position: relative;
         display: flex;
@@ -175,12 +176,12 @@ body {
         margin: 0 auto;
         width: min(450px, 90%);
         font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
-        
+
         .form-title {
           font-size: 38px;
           font-weight: 500;
         }
-        
+
         .input-field1,
         .input-field2 {
           width: min(340px, 92%);
@@ -192,7 +193,7 @@ body {
           border: 3px solid #000;
           font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
         }
-        
+
         .add-button {
           width: 56px;
           height: 30px;
@@ -204,45 +205,45 @@ body {
           position: absolute;
           right: 12%;
           bottom: 0%;
-          
+
           &:hover {
             background-color: aqua;
           }
-          
+
           &:active {
             background-color: rgb(151, 151, 235);
           }
         }
       }
     }
-    
+
     .section-3 {
-      margin: 0px auto;
+      margin: 0 auto;
       padding-bottom: 80px;
-      
+
       .contact-container {
         width: min(630px, 94%);
         margin: 0 auto;
-        
+
         .contact-header,
         .contact-text,
         .contact-list {
           font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
           font-weight: 600;
         }
-        
+
         .contact-header {
           font-size: 42px;
           margin-bottom: 30px;
           text-align: center;
         }
-        
+
         .contact-text {
           font-size: 2em;
           color: #2b2b2b;
           margin-bottom: 30px;
         }
-        
+
         .contact-list {
           font-size: 1.4em;
           text-align: start;

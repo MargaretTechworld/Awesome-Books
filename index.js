@@ -67,7 +67,7 @@ class BookCollection {
 const bookCollection = new BookCollection();
 bookCollection.addBook();
 
-//Modify to make it a Single Page Application
+// Modify to make it a Single Page Application
 
 const listBook = document.querySelector('.link-list');
 const newBook = document.querySelector('.link-new');
@@ -81,7 +81,7 @@ const logo = document.querySelector('.logo');
 
 const dateInfo = document.querySelector('.date-info');
 
-const seperator =document.querySelector('.seperator');
+const seperator = document.querySelector('.seperator');
 
 listBook.addEventListener('click', () => {
   section1.style.display = '';
@@ -108,15 +108,15 @@ contact.addEventListener('click', () => {
   logo.innerHTML = 'Contact';
 });
 
-//Add date to page
+// Add date to page
 
 const d = new Date();
-let year = d.getFullYear();
+const year = d.getFullYear();
 let date = d.getDate();
-let month = d.getMonth();
-let hour = d.getHours();
-let minute = d.getMinutes();
-let second = d.getSeconds();
+const month = d.getMonth();
+const hour = d.getHours();
+const minute = d.getMinutes();
+const second = d.getSeconds();
 let ampm;
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
