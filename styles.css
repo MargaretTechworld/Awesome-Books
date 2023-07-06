@@ -10,131 +10,272 @@ body {
   margin: 0 auto;
   min-width: 375px;
 
-  .page-title {
+  .header {
+    background-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 10px;
     margin: 0 auto;
-    text-align: center;
-    font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
-    font-size: 48px;
-  }
+    position: fixed;
+    width: 100%;
+    z-index: 3;
 
-  .books-section {
-    width: min(420px, 92%);
-    border: 3px solid rgba(0, 0, 0, 0.9);
-    padding: 2px;
-    margin: 0 auto;
-
-    .book-store {
-      position: relative;
-      height: 40px;
+    .nav-bar {
+      margin: 0 auto;
+      width: min(630px, 94%);
+      height: 36px;
+      border: 2px solid #000;
+      border-radius: 2px;
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       align-items: center;
 
-      &:nth-of-type(odd) {
-        background-color: #c4c4c4;
+      .logo {
+        width: 48%;
+        text-decoration: none;
+        color: black;
+        padding-left: 2.5%;
+        font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+        font-size: 24px;
       }
 
-      .store-text {
+      .nav-link-div {
+        width: 48%;
         display: flex;
-        align-items: center;
-        justify-self: flex-start;
-        padding: 1%;
+        flex-direction: row;
+        justify-content: flex-end;
 
-        .book-title,
-        .book-author {
-          font-size: 1.4em;
+        .nav-links {
           font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
-          font-weight: 700;
-        }
+          text-decoration: none;
+          border: none;
+          margin: 0 2.5%;
+          background: none;
+          font-size: 18px;
+          color: black;
 
-        .book-title {
-          margin-right: 10px;
-        }
+          &:hover {
+            color: rgba(16, 181, 218, 0.918);
+            font-size: 20px;
+          }
 
-        .book-author {
-          margin-left: 10px;
+          &:active {
+            color: rgb(35, 100, 186);
+          }
         }
+      }
+    }
 
-        .by-text {
-          font-family: Arial, Helvetica, sans-serif;
+    .date-container {
+      position: relative;
+      margin: 10px auto 20px auto;
+      width: min(630px, 94%);
+
+      .date-info {
+        position: absolute;
+        color: #535252;
+        font-family: Arial, Helvetica, sans-serif;
+        right: 4px;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .main {
+    .section-1 {
+      padding-top: 100px;
+
+      .page-title {
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+        font-size: 48px;
+      }
+
+      .books-section {
+        width: min(520px, 94%);
+        border: 3px solid rgba(0, 0, 0, 0.9);
+        padding: 2px;
+        margin: 0 auto;
+
+        .book-store {
+          position: relative;
+          height: 40px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          &:nth-of-type(odd) {
+            background-color: #c4c4c4;
+          }
+
+          .store-text {
+            display: flex;
+            align-items: center;
+            justify-self: flex-start;
+            padding: 1%;
+
+            .book-title,
+            .book-author {
+              font-size: 1.4em;
+              font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+              font-weight: 700;
+            }
+
+            .book-title {
+              margin-right: 10px;
+            }
+
+            .book-author {
+              margin-left: 10px;
+            }
+
+            .by-text {
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: 500;
+            }
+          }
+
+          .remove-button {
+            position: absolute;
+            right: 2%;
+            width: 60px;
+            height: 26px;
+            border: 1px solid #000;
+            box-shadow: 4px 3px 2px #000;
+            justify-self: flex-end;
+            font-size: 1.2em;
+            font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+            font-weight: 700;
+
+            &:hover {
+              background-color: red;
+            }
+
+            &:active {
+              background-color: rgb(242, 163, 163);
+            }
+          }
+        }
+      }
+
+      .seperator {
+        width: 200px;
+        height: 2px;
+        background-color: #000;
+        margin: 0 auto;
+      }
+    }
+
+    .section-2 {
+      .form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        width: min(450px, 90%);
+        font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+
+        .form-title {
+          font-size: 38px;
           font-weight: 500;
         }
-      }
 
-      .remove-button {
-        position: absolute;
-        right: 2%;
-        width: 60px;
-        height: 26px;
-        border: 1px solid #000;
-        box-shadow: 4px 3px 2px #000;
-        justify-self: flex-end;
-        font-size: 1.2em;
-        font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
-        font-weight: 700;
-
-        &:hover {
-          background-color: red;
+        .input-field1,
+        .input-field2 {
+          width: min(340px, 92%);
+          height: 32px;
+          margin: 0 auto;
+          color: #000;
+          font-size: 1.2em;
+          padding: 0 2%;
+          border: 3px solid #000;
+          font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
         }
 
-        &:active {
-          background-color: rgb(242, 163, 163);
+        .add-button {
+          width: 56px;
+          height: 30px;
+          color: #000;
+          border: 2px solid #000;
+          box-shadow: 4px 3px 2px #000;
+          font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+          font-size: 1.3em;
+          position: absolute;
+          right: 12%;
+          bottom: 0%;
+
+          &:hover {
+            background-color: aqua;
+          }
+
+          &:active {
+            background-color: rgb(151, 151, 235);
+          }
         }
       }
     }
-  }
 
-  .seperator {
-    width: 200px;
-    height: 2px;
-    background-color: #000;
-    margin: 0 auto;
-  }
-
-  .form {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    width: min(420px, 90%);
-    font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
-
-    .form-title {
-      font-size: 38px;
-      font-weight: 500;
-    }
-
-    .input-field1,
-    .input-field2 {
-      width: min(340px, 92%);
-      height: 32px;
+    .section-3 {
       margin: 0 auto;
-      color: #000;
-      font-size: 1.2em;
-      padding: 0 2%;
-      border: 3px solid #000;
-      font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
-    }
+      padding-bottom: 80px;
 
-    .add-button {
-      width: 56px;
-      height: 30px;
-      color: #000;
-      border: 2px solid #000;
-      box-shadow: 4px 3px 2px #000;
-      font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
-      font-size: 1.3em;
-      position: absolute;
-      right: 10%;
-      bottom: 0%;
+      .contact-container {
+        width: min(630px, 94%);
+        margin: 0 auto;
 
-      &:hover {
-        background-color: aqua;
+        .contact-header,
+        .contact-text,
+        .contact-list {
+          font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
+          font-weight: 600;
+        }
+
+        .contact-header {
+          font-size: 42px;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+
+        .contact-text {
+          font-size: 2em;
+          color: #2b2b2b;
+          margin-bottom: 30px;
+        }
+
+        .contact-list {
+          font-size: 1.4em;
+          text-align: start;
+          color: #323232;
+          padding-left: 7%;
+        }
       }
+    }
+  }
 
-      &:active {
-        background-color: rgb(151, 151, 235);
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+
+    .ft-nav-bar {
+      width: min(640px, 94%);
+      margin: 0 auto;
+      border: 2px solid #000;
+      border-radius: 4px;
+      font-size: 20px;
+      padding: 0.2%;
+
+      .ft-nav-links {
+        text-decoration: none;
+        color: black;
+        margin-left: 30px;
+        font-size: 1.2em;
+        font-weight: 500;
+        font-family: 'Nanum Pen Script', Arial, Helvetica, sans-serif;
       }
     }
   }
