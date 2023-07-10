@@ -1,5 +1,5 @@
-import BookCollection from './bookcollection.js';
-import { DateTime } from './luxon.js';
+import BookCollection from './modules/bookcollection.js';
+import { DateTime } from './modules/luxon.js';
 
 const getTime = () => {
   const dt = DateTime.now();
