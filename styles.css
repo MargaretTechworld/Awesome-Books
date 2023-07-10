@@ -168,6 +168,8 @@ body {
     }
 
     .section-2 {
+      display: none;
+
       .form {
         position: relative;
         display: flex;
@@ -218,6 +220,7 @@ body {
     }
 
     .section-3 {
+      display: none;
       margin: 0 auto;
       padding-bottom: 80px;
 
