@@ -7,7 +7,7 @@ export default class BookCollection {
     this.bookTitle = document.querySelector('.input-field1');
     this.bookAuthor = document.querySelector('.input-field2');
     this.bookShelf = document.querySelector('.books-section');
-    // this.removeButton = document.querySelectorAll('remove-button')
+
     this.showBooks();
     this.buttonAdd.addEventListener('click', (e) => {
       e.preventDefault();
@@ -18,29 +18,29 @@ export default class BookCollection {
     });
   }
 
-  addBook() {
-    if (this.bookTitle.value !== '' && this.bookAuthor.value !== '') {
-      const book = new Book(this.bookTitle.value, this.bookAuthor.value);
-      this.collection.push(book);
-    }
-  }
+     addBook = () => {
+       if (this.bookTitle.value !== '' && this.bookAuthor.value !== '') {
+         const book = new Book(this.bookTitle.value, this.bookAuthor.value);
+         this.collection.push(book);
+       }
+     }
 
-  removeBook(index) {
+  removeBook = (index) => {
     this.collection.splice(index, 1);
     this.saveBooks();
     this.showBooks();
   }
 
-  saveBooks() {
+  saveBooks = () => {
     localStorage.setItem('books', JSON.stringify(this.collection));
   }
 
-  clearInput() {
+  clearInput = () => {
     this.bookTitle.value = '';
     this.bookAuthor.value = '';
   }
 
-  showBooks() {
+  showBooks = () => {
     const displayBooks = this.collection.map((book, index) => `<div class="book-store">
         <div class="store-text">
           <p class="book-title">"${book.title}"</p>

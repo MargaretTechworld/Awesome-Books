@@ -9,9 +9,7 @@ const time = document.querySelector('.date-info');
 setInterval(() => {
   time.innerHTML = getTime();
 }, 1000);
-/* eslint-disable no-use-before-define */
-/* eslint-disable max-classes-per-file */
-/* eslint-disable-line no-unused-vars */
+
 const bookCollection = new BookCollection();
 bookCollection.addBook();
 
