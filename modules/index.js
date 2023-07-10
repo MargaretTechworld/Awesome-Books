@@ -1,5 +1,14 @@
 import BookCollection from './bookcollection.js';
-import displayDate from './date.js';
+import { DateTime } from './luxon.js';
+
+const getTime = () => {
+  const dt = DateTime.now();
+  return dt.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+};
+const time = document.querySelector('.date-info');
+setInterval(() => {
+  time.innerHTML = getTime();
+}, 1000);
 /* eslint-disable no-use-before-define */
 /* eslint-disable max-classes-per-file */
 /* eslint-disable-line no-unused-vars */
@@ -41,5 +50,3 @@ contact.addEventListener('click', () => {
   section3.style.paddingTop = '160px';
   logo.innerHTML = 'Contact';
 });
-
-displayDate();
